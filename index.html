@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A cinematic birthday gift website created by Anirudh for Anamika."
+    />
+    <meta name="theme-color" content="#160f2f" />
+    <title>Happy Birthday Anamika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loader" aria-label="Loading birthday gift">
+      <div class="loader-orbit">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p>Preparing something beautiful...</p>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+    <canvas id="confettiCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+    <canvas id="fireworksCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-controls" aria-label="Site controls">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light mode">
+        <span class="sun">☼</span>
+        <span class="moon">☾</span>
+      </button>
+      <button class="icon-btn" id="musicToggle" type="button" aria-label="Toggle background music">
+        <span class="music-on">♪</span>
+        <span class="music-off">×</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="panel hero" id="welcome" aria-labelledby="welcomeTitle">
+        <div class="hero-bg"></div>
+        <div class="floating-hearts" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">28 February 2027</p>
+          <h1 id="welcomeTitle">A Special Surprise For Someone Very Special</h1>
+          <button class="primary-btn" id="openGift" type="button">
+            <span>Open Your Gift</span>
+          </button>
+        </div>
+        <a class="scroll-cue" href="#birthday" aria-label="Scroll to birthday reveal"></a>
+      </section>
+
+      <section class="panel reveal-panel birthday" id="birthday" aria-labelledby="birthdayTitle">
+        <div class="section-inner centered">
+          <p class="eyebrow reveal">For Anamika</p>
+          <h2 class="display reveal" id="birthdayTitle">Happy Birthday Anamika <span>🎂</span></h2>
+          <p class="date-pill reveal">28 February 2027</p>
+          <p class="soft-copy reveal">
+            A little constellation of wishes, wrapped with sincerity and sent with a smile.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel reasons" id="reasons" aria-labelledby="reasonsTitle">
+        <div class="section-inner">
+          <p class="eyebrow reveal">Reasons You Are Amazing</p>
+          <h2 class="section-title reveal" id="reasonsTitle">The world notices your light.</h2>
+          <div class="reason-grid">
+            <article class="glass-card reveal-card">Your smile brightens every room.</article>
+            <article class="glass-card reveal-card">Your kindness inspires people.</article>
+            <article class="glass-card reveal-card">Your positivity is contagious.</article>
+            <article class="glass-card reveal-card">You deserve happiness and success.</article>
+            <article class="glass-card reveal-card">The world becomes brighter because you exist.</article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel wishes" id="wishes" aria-labelledby="wishesTitle">
+        <div class="wish-sky" aria-hidden="true"></div>
+        <div class="section-inner centered">
+          <p class="eyebrow reveal">Magical Starry Wishes</p>
+          <h2 class="section-title reveal" id="wishesTitle">A Sky Full Of Wishes For You</h2>
+          <div class="wish-orbit" aria-label="Birthday wishes">
+            <span class="wish reveal-card">✨ Happiness</span>
+            <span class="wish reveal-card">✨ Success</span>
+            <span class="wish reveal-card">✨ Good Health</span>
+            <span class="wish reveal-card">✨ Confidence</span>
+            <span class="wish reveal-card">✨ Beautiful Memories</span>
+            <span class="wish reveal-card">✨ Dreams Come True</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel timeline-section" id="timeline" aria-labelledby="timelineTitle">
+        <div class="section-inner">
+          <p class="eyebrow reveal">Future Timeline</p>
+          <h2 class="section-title reveal" id="timelineTitle">A beautiful road ahead.</h2>
+          <div class="timeline">
+            <div class="timeline-line" aria-hidden="true"></div>
+            <article class="timeline-item reveal-card"><strong>2027</strong><span>New Opportunities</span></article>
+            <article class="timeline-item reveal-card"><strong>2028</strong><span>Bigger Dreams</span></article>
+            <article class="timeline-item reveal-card"><strong>2029</strong><span>Amazing Adventures</span></article>
+            <article class="timeline-item reveal-card"><strong>2030</strong><span>Beautiful Achievements</span></article>
+            <article class="timeline-item reveal-card"><strong>Future</strong><span>A Life Filled With Happiness</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel letter-section" id="message" aria-labelledby="messageTitle">
+        <div class="section-inner narrow">
+          <p class="eyebrow reveal">Special Message</p>
+          <h2 class="section-title reveal" id="messageTitle">A Small Message For You</h2>
+          <article class="letter reveal-card">
+            <p id="typedLetter" aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel celebration" id="celebration" aria-labelledby="celebrationTitle">
+        <div class="balloons" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="section-inner centered">
+          <p class="eyebrow reveal">Celebration</p>
+          <h2 class="display reveal" id="celebrationTitle">May Your Birthday Be As Wonderful As You Are</h2>
+          <a class="primary-btn reveal" href="#gift"><span>One Last Message</span></a>
+        </div>
+      </section>
+
+      <section class="panel final" id="gift" aria-labelledby="giftTitle">
+        <div class="section-inner narrow">
+          <article class="certificate reveal-card">
+            <p class="eyebrow">A keepsake for 28 February 2027</p>
+            <h2 id="giftTitle">Birthday Gift</h2>
+            <p>
+              This website was specially created by Anirudh as a birthday gift for Anamika.
+            </p>
+            <p>
+              May your birthday be filled with happiness, laughter, success, and unforgettable
+              memories.
+            </p>
+            <p class="signature">Happy Birthday Anamika ❤️</p>
+            <div class="glow-message">
+              <span>Some people are remembered.</span>
+              <span>Some people are admired.</span>
+              <span>And some people make the world brighter just by being themselves.</span>
+              <strong>Happy Birthday, Anamika ❤️</strong>
+            </div>
+            <footer>Made with sincerity, effort, and best wishes by Anirudh.</footer>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
